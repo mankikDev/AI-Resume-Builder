@@ -1,0 +1,133 @@
+{
+  "info": {
+    "name": "AI Resume Builder API",
+    "_postman_id": "bf9766b6-03b2-4f25-bf74-eca3e27d6fd2",
+    "description": "Postman collection for AI Resume Builder backend APIs.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123!\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123!\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/auth/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Resume",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"{{userId}}\",\n  \"fullName\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"phone\": \"(123) 456-7890\",\n  \"linkedin\": \"https://linkedin.com/in/testuser\",\n  \"github\": \"https://github.com/testuser\",\n  \"summary\": \"Experienced software engineer with expertise in resume generation and AI-driven workflows.\",\n  \"education\": \"B.S. in Computer Science, Example University\",\n  \"skills\": \"JavaScript, Node.js, React, MongoDB\",\n  \"experience\": \"3 years building web applications and APIs.\",\n  \"projects\": \"AI Resume Builder application.\",\n  \"certifications\": \"Certified Web Developer\",\n  \"languages\": \"English, Spanish\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/resume/create",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "resume",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register User (Alternate)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"Password123!\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/users/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000"
+    },
+    {
+      "key": "userId",
+      "value": ""
+    }
+  ]
+}
